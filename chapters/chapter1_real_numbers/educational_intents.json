@@ -1,0 +1,353 @@
+{
+  "educational_intents": {
+    "hcf_lcm_explanations": {
+      "hcf_lcm_calculation": {
+        "intent": "explain_hcf_lcm_method",
+        "aliases": [
+          "HCF and LCM",
+          "highest common factor and least common multiple",
+          "GCD and LCM",
+          "find HCF LCM",
+          "calculate HCF LCM",
+          "HCF LCM using prime factorization"
+        ],
+        "description": "Step-by-step calculation of HCF and LCM using prime factorization",
+        "mathematical_concepts": [
+          "prime_factorization",
+          "fundamental_theorem_of_arithmetic",
+          "common_factors",
+          "multiples"
+        ],
+        "solution_approach": "prime_factorization_method",
+        "difficulty_level": "medium",
+        "grade_level": "class_10",
+        "learning_objectives": [
+          "Understand prime factorization",
+          "Apply fundamental theorem of arithmetic",
+          "Calculate HCF using common factors",
+          "Calculate LCM using highest powers",
+          "Verify using HCF × LCM = a × b relationship"
+        ]
+      },
+      
+      "euclidean_algorithm": {
+        "intent": "explain_euclidean_algorithm",
+        "aliases": [
+          "Euclidean algorithm",
+          "division algorithm",
+          "Euclidean method",
+          "HCF using division",
+          "successive division method"
+        ],
+        "description": "Finding HCF using Euclidean algorithm with step-by-step division",
+        "mathematical_concepts": [
+          "division_algorithm",
+          "remainder_theorem",
+          "iterative_process"
+        ],
+        "solution_approach": "step_by_step_division",
+        "difficulty_level": "medium",
+        "learning_objectives": [
+          "Apply division algorithm repeatedly",
+          "Understand when to stop the process",
+          "Identify HCF as last non-zero remainder"
+        ]
+      }
+    },
+
+    "irrationality_proofs": {
+      "simple_square_root": {
+        "intent": "prove_square_root_irrational",
+        "aliases": [
+          "√2 is irrational",
+          "√3 is irrational", 
+          "square root irrational",
+          "prove √n irrational",
+          "irrationality of square root"
+        ],
+        "description": "Proof by contradiction for irrationality of √n",
+        "mathematical_concepts": [
+          "proof_by_contradiction",
+          "coprime_integers",
+          "perfect_squares",
+          "divisibility"
+        ],
+        "proof_method": "contradiction",
+        "difficulty_level": "hard",
+        "learning_objectives": [
+          "Understand proof by contradiction",
+          "Apply coprimality conditions",
+          "Recognize perfect square patterns",
+          "Derive logical contradictions"
+        ]
+      },
+
+      "linear_combinations": {
+        "intent": "prove_linear_combination_irrational",
+        "aliases": [
+          "a + b√n irrational",
+          "√n + k irrational",
+          "sum of rational and irrational",
+          "linear combination irrational"
+        ],
+        "description": "Proof that linear combinations involving square roots are irrational",
+        "mathematical_concepts": [
+          "rational_irrational_sum",
+          "algebraic_manipulation",
+          "contradiction_method"
+        ],
+        "proof_method": "contradiction",
+        "difficulty_level": "hard"
+      },
+
+      "reciprocal_expressions": {
+        "intent": "prove_reciprocal_irrational",
+        "aliases": [
+          "1/√n irrational",
+          "reciprocal of square root",
+          "1/(a + √b) irrational"
+        ],
+        "description": "Proof that reciprocals of irrational expressions remain irrational",
+        "mathematical_concepts": [
+          "reciprocal_properties",
+          "rational_closure",
+          "contradiction_method"
+        ]
+      }
+    },
+
+    "prime_factorization": {
+      "fundamental_theorem": {
+        "intent": "explain_fundamental_theorem_arithmetic",
+        "aliases": [
+          "fundamental theorem of arithmetic",
+          "unique prime factorization",
+          "prime decomposition",
+          "FTA"
+        ],
+        "description": "Explanation of uniqueness of prime factorization",
+        "mathematical_concepts": [
+          "prime_numbers",
+          "composite_numbers",
+          "unique_factorization",
+          "existence_and_uniqueness"
+        ],
+        "difficulty_level": "medium"
+      },
+
+      "factorization_process": {
+        "intent": "demonstrate_prime_factorization",
+        "aliases": [
+          "prime factorization of",
+          "find prime factors",
+          "factorize number",
+          "prime decomposition method"
+        ],
+        "description": "Step-by-step process of finding prime factors",
+        "solution_approach": "successive_division_by_primes",
+        "difficulty_level": "easy"
+      }
+    },
+
+    "number_classification": {
+      "rational_vs_irrational": {
+        "intent": "classify_number_type",
+        "aliases": [
+          "rational or irrational",
+          "type of number",
+          "classify number",
+          "is rational",
+          "is irrational"
+        ],
+        "description": "Determine if given number is rational or irrational",
+        "mathematical_concepts": [
+          "rational_numbers",
+          "irrational_numbers",
+          "decimal_expansions",
+          "fraction_representation"
+        ]
+      },
+
+      "real_number_system": {
+        "intent": "explain_real_number_system",
+        "aliases": [
+          "real number system",
+          "types of real numbers",
+          "number system hierarchy",
+          "classification of numbers"
+        ],
+        "description": "Overview of real number system and classifications",
+        "mathematical_concepts": [
+          "natural_numbers",
+          "whole_numbers", 
+          "integers",
+          "rational_numbers",
+          "irrational_numbers",
+          "real_numbers"
+        ]
+      }
+    },
+
+    "problem_solving": {
+      "hcf_lcm_applications": {
+        "intent": "solve_hcf_lcm_word_problems",
+        "aliases": [
+          "HCF LCM word problems",
+          "application problems",
+          "real life HCF LCM",
+          "bells ringing problem",
+          "greatest number that divides"
+        ],
+        "description": "Real-world applications of HCF and LCM",
+        "problem_types": [
+          "time_intervals",
+          "measurement_problems", 
+          "distribution_problems",
+          "greatest_number_dividing"
+        ]
+      },
+
+      "verification_problems": {
+        "intent": "verify_calculations",
+        "aliases": [
+          "verify HCF LCM",
+          "check answer",
+          "verification using relationship",
+          "HCF × LCM = a × b"
+        ],
+        "description": "Verification of HCF and LCM using mathematical relationships"
+      }
+    }
+  },
+
+  "intent_classification_rules": {
+    "calculation_triggers": [
+      "find", "calculate", "compute", "determine", "solve",
+      "what is", "get", "obtain"
+    ],
+    "proof_triggers": [
+      "prove", "show", "demonstrate", "verify", "establish",
+      "is irrational", "is rational"
+    ],
+    "explanation_triggers": [
+      "explain", "how", "why", "method", "steps", "process",
+      "understand", "concept"
+    ],
+    "application_triggers": [
+      "apply", "use", "word problem", "real life", "application",
+      "practical", "example"
+    ]
+  },
+
+  "query_patterns": {
+    "hcf_lcm_patterns": [
+      "hcf.*lcm.*of.*\\d+.*and.*\\d+",
+      "lcm.*hcf.*of.*\\d+.*and.*\\d+", 
+      "highest.*common.*factor.*least.*common.*multiple",
+      "gcd.*lcm.*\\d+.*\\d+"
+    ],
+    
+    "irrationality_patterns": [
+      "prove.*√\\d+.*irrational",
+      "show.*√\\d+.*irrational",
+      "√\\d+.*\\+.*\\d+.*irrational",
+      "\\d+.*\\+.*√\\d+.*irrational",
+      "rational.*or.*irrational.*√"
+    ],
+    
+    "prime_factorization_patterns": [
+      "prime.*factorization.*of.*\\d+",
+      "prime.*factors.*of.*\\d+",
+      "factorize.*\\d+",
+      "fundamental.*theorem.*arithmetic"
+    ],
+    
+    "euclidean_patterns": [
+      "euclidean.*algorithm.*\\d+.*\\d+",
+      "division.*algorithm.*hcf",
+      "successive.*division.*method"
+    ]
+  },
+
+  "response_templates": {
+    "hcf_lcm_response": {
+      "introduction": "I'll find the HCF and LCM of {numbers} using prime factorization method.",
+      "steps": [
+        "Prime factorization of each number",
+        "Identify common prime factors for HCF", 
+        "Use highest powers of all primes for LCM",
+        "Verify using HCF × LCM = product relationship"
+      ],
+      "conclusion": "The HCF is {hcf} and LCM is {lcm}."
+    },
+    
+    "irrationality_proof_response": {
+      "introduction": "I'll prove that {expression} is irrational using proof by contradiction.",
+      "method": "Assume {expression} is rational and derive a contradiction.",
+      "conclusion": "Since we reached a contradiction, {expression} must be irrational."
+    },
+    
+    "prime_factorization_response": {
+      "introduction": "I'll find the prime factorization of {number} step by step.",
+      "method": "Divide by smallest primes successively until quotient becomes 1.",
+      "conclusion": "The prime factorization is {factorization}."
+    }
+  },
+
+  "learning_paths": {
+    "beginner": [
+      "number_classification",
+      "prime_factorization", 
+      "simple_hcf_lcm",
+      "basic_irrationality"
+    ],
+    "intermediate": [
+      "euclidean_algorithm",
+      "complex_hcf_lcm",
+      "linear_combination_proofs",
+      "application_problems"
+    ],
+    "advanced": [
+      "extended_euclidean",
+      "multiple_number_hcf_lcm",
+      "complex_irrationality_proofs",
+      "number_theory_applications"
+    ]
+  },
+
+  "common_misconceptions": [
+    {
+      "misconception": "HCF is always larger than LCM",
+      "correction": "HCF ≤ min(a,b) and LCM ≥ max(a,b), so LCM ≥ HCF"
+    },
+    {
+      "misconception": "All square roots are irrational", 
+      "correction": "Only square roots of non-perfect squares are irrational"
+    },
+    {
+      "misconception": "Prime factorization is only for composite numbers",
+      "correction": "Prime numbers have themselves as their prime factorization"
+    }
+  ],
+
+  "metadata": {
+    "version": "1.0",
+    "chapter": "Real Numbers",
+    "class": "X",
+    "board": "CBSE",
+    "topics_covered": [
+      "HCF and LCM",
+      "Prime Factorization", 
+      "Irrationality Proofs",
+      "Euclidean Algorithm",
+      "Fundamental Theorem of Arithmetic",
+      "Real Number System"
+    ],
+    "prerequisite_knowledge": [
+      "Basic arithmetic operations",
+      "Concept of factors and multiples",
+      "Understanding of fractions",
+      "Basic proof concepts"
+    ]
+  }
+}

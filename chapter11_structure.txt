@@ -1,0 +1,20 @@
+# Structure for chapter11
+
+📁 Root Files in cbse_math_solver
+  📄 .env
+  📄 README.md
+  📄 __init__.py
+  📄 app.py
+  📄 chapter11_structure.txt
+  📄 chapter_sidebar.py
+  📄 d.py
+  📄 d_chapter.py
+  📄 directory_structure.txt
+  📄 requirements.txt
+
+📁 topic_handlers (filtered)
+
+📁 utils (filtered)
+
+📁 chapters/chapter11_areas_volumes
+📁 config

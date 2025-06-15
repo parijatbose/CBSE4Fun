@@ -1,0 +1,42 @@
+ch01_real_numbers.pdf
+ch02_polynomials.pdf
+ch03_pair_of_linear_equations.pdf
+ch04_quadratic equations.pdf
+ch05_arithmetic_progressions.pdf
+ch06_triangles.pdf
+ch07_coordinate_geometry.pdf
+ch08_introduction_to_trigonometry.pdf
+ch09_some_applications_of_trigonometry.pdf PDF ch10_circles.pdf
+ch11_areas_related_to_circles.pdf
+ch12_surface areas_and_volumes.pdf
+ch13_statistics.pdf
+ch14_probability.pdf
+
+----------------------------------------------------------------
+real_numbers.pdf
+polynomials.pdf
+pair_of_linear_equations.pdf
+quadratic equations.pdf
+arithmetic_progressions.pdf
+triangles.pdf
+coordinate_geometry.pdf
+introduction_to_trigonometry.pdf
+some_applications_of_trigonometry.pdf PDF ch10_circles.pdf
+areas_related_to_circles.pdf
+surface areas_and_volumes.pdf
+statistics.pdf
+probability.pdf
+------------------------------------------------------
+real_numbers
+polynomials
+pair_of_linear_equations
+quadratic equations
+arithmetic_progressions
+triangles
+coordinate_geometry
+introduction_to_trigonometry
+some_applications_of_trigonometry.pdf PDF ch10_circles
+areas_related_to_circles
+surface areas_and_volumes
+statistics
+probability

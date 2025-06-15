@@ -1,0 +1,299 @@
+{
+  "educational_intents": {
+    "theorem_explanations": {
+      "basic_proportionality_theorem": {
+        "intent": "explain_bpt_theorem",
+        "aliases": [
+          "basic proportionality theorem",
+          "BPT",
+          "thales theorem", 
+          "intercept theorem",
+          "explain BPT",
+          "what is basic proportionality theorem",
+          "prove BPT"
+        ],
+        "description": "Animated explanation of Basic Proportionality Theorem",
+        "theorem_statement": "If a line is drawn parallel to one side of a triangle to intersect the other two sides in distinct points, the other two sides are divided in the same ratio",
+        "mathematical_expression": "DE || BC ⟹ AD/DB = AE/EC",
+        "animation_type": "step_by_step_construction",
+        "explanation_components": [
+          "theorem_statement",
+          "construction_steps", 
+          "ratio_calculation",
+          "proof_demonstration",
+          "real_world_applications"
+        ],
+        "difficulty_level": "medium",
+        "grade_level": "class_10",
+        "prerequisites": ["basic_triangles", "parallel_lines", "ratios"],
+        "learning_objectives": [
+          "Understand the BPT statement",
+          "Identify parallel lines in triangles", 
+          "Calculate proportional segments",
+          "Apply BPT to solve problems"
+        ],
+        "animation_parameters": {
+          "default_segments": [4, 6, 6, 9],
+          "animation_speed": "medium",
+          "explanation_timing": "synchronized",
+          "interactive_elements": ["slider_for_point_d", "ratio_calculator"]
+        }
+      },
+      
+      "converse_bpt": {
+        "intent": "explain_converse_bpt",
+        "aliases": [
+          "converse of BPT",
+          "converse basic proportionality theorem",
+          "if ratios are equal then parallel",
+          "prove lines are parallel"
+        ],
+        "description": "Animated explanation of Converse of Basic Proportionality Theorem", 
+        "theorem_statement": "If a line divides any two sides of a triangle in the same ratio, then the line is parallel to the third side",
+        "mathematical_expression": "AD/DB = AE/EC ⟹ DE || BC",
+        "animation_type": "reverse_construction",
+        "explanation_components": [
+          "given_ratios",
+          "construction_proof",
+          "parallel_verification",
+          "angle_analysis"
+        ]
+      },
+
+      "pythagorean_theorem": {
+        "intent": "explain_pythagorean_theorem",
+        "aliases": [
+          "pythagorean theorem",
+          "pythagoras theorem",
+          "right triangle theorem",
+          "a² + b² = c²",
+          "explain pythagorean"
+        ],
+        "description": "Visual proof and explanation of Pythagorean theorem",
+        "theorem_statement": "In a right triangle, the square of the hypotenuse equals the sum of squares of the other two sides",
+        "mathematical_expression": "a² + b² = c²",
+        "animation_type": "geometric_proof",
+        "explanation_components": [
+          "square_construction",
+          "area_calculation", 
+          "algebraic_proof",
+          "historical_context"
+        ],
+        "animation_parameters": {
+          "proof_type": "square_rearrangement",
+          "show_areas": true,
+          "interactive_measurements": true
+        }
+      },
+
+      "triangle_similarity": {
+        "intent": "explain_triangle_similarity",
+        "aliases": [
+          "similar triangles",
+          "triangle similarity",
+          "AA similarity",
+          "SSS similarity", 
+          "SAS similarity",
+          "similarity criteria"
+        ],
+        "description": "Interactive explanation of triangle similarity criteria",
+        "theorem_statement": "Triangles are similar if corresponding angles are equal or sides are proportional",
+        "mathematical_expression": "△ABC ~ △DEF",
+        "animation_type": "comparative_demonstration",
+        "explanation_components": [
+          "similarity_criteria",
+          "aa_criterion",
+          "sss_criterion", 
+          "sas_criterion",
+          "scale_factor_demo",
+          "real_world_examples"
+        ],
+        "animation_parameters": {
+          "show_transformations": true,
+          "scale_animation": true,
+          "overlay_triangles": true
+        }
+      }
+    },
+
+    "concept_explanations": {
+      "parallel_lines": {
+        "intent": "explain_parallel_lines",
+        "aliases": [
+          "parallel lines",
+          "what are parallel lines",
+          "properties of parallel lines",
+          "parallel line angles"
+        ],
+        "description": "Basic concepts of parallel lines and their properties",
+        "animation_type": "property_demonstration",
+        "key_concepts": [
+          "never_intersect",
+          "equal_distance",
+          "corresponding_angles",
+          "alternate_angles",
+          "co_interior_angles"
+        ]
+      },
+
+      "triangle_properties": {
+        "intent": "explain_triangle_properties", 
+        "aliases": [
+          "triangle properties",
+          "types of triangles",
+          "triangle angles",
+          "triangle classification"
+        ],
+        "description": "Classification and properties of different triangle types",
+        "animation_type": "morphing_demonstration",
+        "triangle_types": [
+          "equilateral",
+          "isosceles", 
+          "scalene",
+          "right",
+          "acute",
+          "obtuse"
+        ]
+      }
+    },
+
+    "problem_solving": {
+      "bpt_applications": {
+        "intent": "solve_bpt_problems",
+        "aliases": [
+          "BPT problems",
+          "solve using BPT",
+          "proportional segments",
+          "find missing segment BPT"
+        ],
+        "description": "Step-by-step solutions for BPT-based problems",
+        "problem_types": [
+          "find_missing_segment",
+          "verify_parallel_lines",
+          "calculate_ratios",
+          "word_problems"
+        ],
+        "solution_approach": "guided_steps_with_visualization"
+      },
+
+      "similarity_problems": {
+        "intent": "solve_similarity_problems",
+        "aliases": [
+          "similarity problems",
+          "similar triangle problems", 
+          "find scale factor",
+          "prove triangles similar"
+        ],
+        "description": "Solving problems involving similar triangles",
+        "problem_types": [
+          "prove_similarity",
+          "find_scale_factor",
+          "calculate_missing_sides",
+          "area_ratio_problems"
+        ]
+      }
+    },
+
+    "interactive_explorations": {
+      "dynamic_bpt": {
+        "intent": "explore_bpt_interactively",
+        "aliases": [
+          "interactive BPT",
+          "explore BPT",
+          "dynamic parallel lines",
+          "manipulate triangle"
+        ],
+        "description": "Interactive exploration of BPT with draggable elements",
+        "interaction_type": "drag_and_drop",
+        "features": [
+          "draggable_point_d",
+          "real_time_ratios",
+          "parallel_line_adjustment",
+          "measurement_tools"
+        ]
+      },
+
+      "triangle_explorer": {
+        "intent": "explore_triangles_interactively",
+        "aliases": [
+          "triangle explorer",
+          "interactive triangles",
+          "triangle playground",
+          "experiment with triangles"
+        ],
+        "description": "Interactive tool to explore triangle properties",
+        "features": [
+          "adjustable_vertices",
+          "real_time_measurements",
+          "property_identification",
+          "transformation_tools"
+        ]
+      }
+    },
+
+    "assessment_and_practice": {
+      "bpt_quiz": {
+        "intent": "practice_bpt_problems",
+        "aliases": [
+          "BPT practice",
+          "BPT quiz",
+          "test BPT knowledge",
+          "BPT exercises"
+        ],
+        "description": "Practice problems with immediate feedback",
+        "question_types": [
+          "multiple_choice",
+          "numerical_answer",
+          "proof_steps",
+          "diagram_interpretation"
+        ],
+        "difficulty_levels": ["easy", "medium", "hard"],
+        "adaptive_difficulty": true
+      }
+    }
+  },
+
+  "intent_classification_rules": {
+    "animation_triggers": [
+      "explain", "show", "demonstrate", "animate", "visualize",
+      "how does", "why does", "prove", "step by step"
+    ],
+    "interactive_triggers": [
+      "interactive", "explore", "experiment", "try", "play with",
+      "manipulate", "adjust", "change"
+    ],
+    "problem_solving_triggers": [
+      "solve", "find", "calculate", "determine", "what is",
+      "how to find", "steps to solve"
+    ],
+    "concept_explanation_triggers": [
+      "what is", "define", "meaning", "concept", "understand",
+      "learn about", "explain the concept"
+    ]
+  },
+
+  "response_templates": {
+    "animation_response": {
+      "introduction": "Let me show you an animated explanation of {concept}.",
+      "animation_description": "This animation demonstrates {specific_aspect} step by step.",
+      "interactive_prompt": "You can {interaction_options} to explore further.",
+      "conclusion": "Now you can see how {concept} works visually!"
+    },
+    
+    "problem_solution": {
+      "problem_analysis": "Let's break down this {problem_type} problem.",
+      "step_by_step": "Here are the solution steps with visual guidance:",
+      "verification": "Let's verify our answer using the theorem.",
+      "practice_suggestion": "Try these similar problems to reinforce your understanding."
+    }
+  },
+
+  "metadata": {
+    "version": "1.0",
+    "created_for": "CBSE Class X Triangle Calculator",
+    "supported_languages": ["english"],
+    "animation_framework": "matplotlib",
+    "interactivity_level": "high",
+    "educational_approach": "visual_learning_with_explanation"
+  }
+}

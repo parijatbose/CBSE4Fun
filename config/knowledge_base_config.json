@@ -1,0 +1,22 @@
+{
+  "question_types": [
+    "mcq",
+    "short_answer",
+    "long_answer",
+    "numerical"
+  ],
+  "difficulty_levels": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "search_settings": {
+    "max_results": 10,
+    "similarity_threshold": 0.7
+  },
+  "test_generation": {
+    "quick_quiz": 10,
+    "chapter_test": 25,
+    "full_test": 50
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "short_answer_questions": {
+    "sample_topic": [
+      {
+        "id": "chapter6_triangles_short_001",
+        "question": "Sample short answer question for Triangles",
+        "answer": "Sample detailed answer with explanation",
+        "steps": [
+          "Step 1: Identify the problem type",
+          "Step 2: Apply appropriate method",
+          "Step 3: Calculate the result"
+        ],
+        "difficulty": "medium",
+        "marks": 3,
+        "time_limit": "5 minutes",
+        "keywords": [
+          "sample",
+          "keywords"
+        ]
+      }
+    ]
+  }
+}

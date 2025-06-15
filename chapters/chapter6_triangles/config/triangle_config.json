@@ -1,0 +1,89 @@
+{
+    "formulas": {
+        "pythagoras": {
+            "name": "Pythagoras Theorem",
+            "formula": "c² = a² + b²",
+            "description": "In a right-angled triangle, the square of the hypotenuse equals the sum of squares of other two sides.",
+            "variables": {
+                "c": "hypotenuse (longest side)",
+                "a": "base",
+                "b": "height"
+            },
+            "example": "If base = 3, height = 4, then hypotenuse = √(3² + 4²) = √(9 + 16) = √25 = 5"
+        },
+        "similarity": {
+            "name": "Triangle Similarity Criteria",
+            "criteria": [
+                {
+                    "name": "AA (Angle-Angle)",
+                    "description": "If two angles of one triangle equal two angles of another"
+                },
+                {
+                    "name": "SSS (Side-Side-Side)",
+                    "description": "If all corresponding sides are in the same ratio",
+                    "formula": "a₁/a₂ = b₁/b₂ = c₁/c₂"
+                },
+                {
+                    "name": "SAS (Side-Angle-Side)",
+                    "description": "If one angle is equal and including sides are in same ratio"
+                }
+            ],
+            "properties": [
+                "Corresponding angles are equal",
+                "Corresponding sides are proportional",
+                "Ratio of areas = (ratio of sides)²"
+            ]
+        },
+        "area": {
+            "name": "Triangle Area Formulas",
+            "formulas": [
+                {
+                    "name": "Base-Height Formula",
+                    "formula": "Area = ½ × base × height"
+                },
+                {
+                    "name": "Heron's Formula",
+                    "formula": "Area = √[s(s-a)(s-b)(s-c)]",
+                    "description": "Where s = (a+b+c)/2 (semi-perimeter)"
+                },
+                {
+                    "name": "Trigonometric Formula",
+                    "formula": "Area = ½ × a × b × sin(C)",
+                    "description": "Where C is angle between sides a and b"
+                },
+                {
+                    "name": "Equilateral Triangle",
+                    "formula": "Area = (√3/4) × side²"
+                }
+            ]
+        },
+        "bpt": {
+            "name": "Basic Proportionality Theorem (Thales Theorem)",
+            "statement": "If a line is drawn parallel to one side of a triangle intersecting the other two sides, then it divides the two sides proportionally.",
+            "formula": "If DE ∥ BC, then AD/DB = AE/EC and AD/AB = AE/AC = DE/BC",
+            "converse": "If a line divides two sides of a triangle in the same ratio, then the line is parallel to the third side.",
+            "applications": [
+                "Finding unknown lengths",
+                "Proving lines parallel",
+                "Similar triangle problems"
+            ]
+        }
+    },
+    "plotting": {
+        "colors": {
+            "triangle": "#2E86C1",
+            "angles": "#E74C3C",
+            "sides": "#27AE60",
+            "labels": "#000000",
+            "background": "#FFFFFF"
+        },
+        "line_width": 2,
+        "font_size": 12,
+        "arc_radius_ratio": 0.2
+    },
+    "validation": {
+        "min_side_length": 0.1,
+        "max_side_length": 1000,
+        "angle_tolerance": 1e-10
+    }
+} 

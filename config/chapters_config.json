@@ -1,0 +1,103 @@
+{
+  "chapters": {
+    "chapter1": {
+      "title": "Real Numbers",
+      "status": "ready",
+      "sub_chapters": [
+        "irrationality_proofs",
+        "euclid_division"
+      ],
+      "description": "Irrational numbers, Euclid's division lemma, HCF & LCM"
+    },
+    "chapter2": {
+      "title": "Polynomials",
+      "status": "ready",
+      "sub_chapters": [
+        "polynomial_factoring",
+        "zeroes_relationship",
+        "quadratic_construction"
+      ],
+      "description": "Polynomial operations, zeroes, and construction"
+    },
+    "chapter3": {
+      "title": "Pair of Linear Equations in Two Variables",
+      "status": "ready",
+      "sub_chapters": [
+        "graphical_method",
+        "substitution_method",
+        "elimination_method",
+        "cross_multiplication"
+      ],
+      "description": "Solving linear equations using 4 CBSE methods"
+    },
+    "chapter4": {
+      "title": "Quadratic Equations",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - Quadratic formula, nature of roots"
+    },
+    "chapter5": {
+      "title": "Arithmetic Progressions",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - AP sequences, sum formulas"
+    },
+    "chapter6": {
+      "title": "Triangles",
+      "status": "ready",
+      "sub_chapters": [
+        "triangle_properties",
+        "triangle_similarity"
+      ],
+      "description": "Triangle properties, similarity criteria"
+    },
+    "chapter7": {
+      "title": "Coordinate Geometry",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - Distance formula, section formula"
+    },
+    "chapter8": {
+      "title": "Introduction to Trigonometry",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - Trigonometric ratios and identities"
+    },
+    "chapter9": {
+      "title": "Circles",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - Tangents, chords, circle theorems"
+    },
+    "chapter10": {
+      "title": "Constructions",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - Geometric constructions"
+    },
+    "chapter11": {
+      "title": "Areas Related to Circles",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - Circle areas, sectors, segments"
+    },
+    "chapter12": {
+      "title": "Surface Areas and Volumes",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - 3D geometry calculations"
+    },
+    "chapter13": {
+      "title": "Statistics",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - Mean, median, mode, data analysis"
+    },
+    "chapter14": {
+      "title": "Probability",
+      "status": "coming_soon",
+      "sub_chapters": [],
+      "description": "Coming Soon - Basic probability concepts"
+    }
+  }
+}

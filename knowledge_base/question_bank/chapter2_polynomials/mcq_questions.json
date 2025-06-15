@@ -1,0 +1,21 @@
+{
+  "mcq_questions": {
+    "sample_topic": [
+      {
+        "id": "chapter2_polynomials_mcq_001",
+        "question": "Sample MCQ question for Polynomials",
+        "options": {
+          "A": "Option A",
+          "B": "Option B",
+          "C": "Option C",
+          "D": "Option D"
+        },
+        "correct_answer": "A",
+        "explanation": "Sample explanation for the correct answer",
+        "difficulty": "easy",
+        "marks": 1,
+        "time_limit": "1 minute"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "intent": "factor_polynomial",
+  "patterns": [
+    "factor",
+    "can you factor",
+    "factorise",
+    "factorize",
+    "split the middle term",
+    "find factors"
+  ],
+  "examples": [
+    "factor x^2 - 5x + 6",
+    "can you factor x^2 + 3x + 2",
+    "factorize x^2 - 7x + 12",
+    "factor the polynomial x^2 + 8x + 15",
+    "x^2 - 9x + 20",
+    "factor x^3 - 6x^2 + 11x - 6",
+    "factorize x^3 + 2x^2 - 5x - 6",
+    "can you factor x^3 - x",
+    "factor the cubic x^3 - 8"
+  ],
+  "response_template": "To factor a polynomial, we find its roots and express it as a product of linear factors.",
+  "steps_template": [
+    "For Quadratic (ax² + bx + c):",
+    "  1. Check discriminant (b² - 4ac)",
+    "  2. Find two numbers that multiply to ac and add to b",
+    "  3. Split the middle term and factor by grouping",
+    "",
+    "For Cubic (ax³ + bx² + cx + d):",
+    "  1. Try Rational Root Theorem (±factors of d/±factors of a)",
+    "  2. Use synthetic division to find factors",
+    "  3. Factor the remaining quadratic"
+  ],
+  "common_errors": [
+    "Not all polynomials can be factored over real numbers",
+    "Check discriminant for quadratics - if negative, no real factors exist",
+    "Some cubics have only one real root and two complex roots"
+  ]
+}
