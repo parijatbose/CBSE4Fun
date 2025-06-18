@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "chapter": "Circles",
+    "class": "10",
+    "cbse_topic": "Geometry – Circle Theorems, Tangents",
+    "path": "cbse_math_solver/chapters/chapter9_circles/sub_chapters/logic_template/circles.json"
+  },
+  "intents": [
+    {
+      "intent": "define_circle_and_parts",
+      "examples": [
+        "What is a circle?",
+        "Define radius, diameter and chord",
+        "What is a tangent and secant?",
+        "List parts of a circle"
+      ],
+      "response_template": "Circle definitions and parts explanation"
+    },
+    {
+      "intent": "tangent_definition",
+      "examples": [
+        "What is a tangent to a circle?",
+        "Define tangent",
+        "Can a line touch the circle at more than one point?",
+        "What is the point of contact in circle?"
+      ],
+      "response_template": "Tangent definition and properties"
+    },
+    {
+      "intent": "number_of_tangents",
+      "examples": [
+        "How many tangents can be drawn from a point outside a circle?",
+        "What is the maximum number of tangents to a circle?",
+        "Number of tangents from external point?",
+        "Can we draw two tangents to a circle from a point?"
+      ],
+      "response_template": "Number of tangents explanation"
+    },
+    {
+      "intent": "tangent_radius_theorem",
+      "examples": [
+        "State the theorem: the tangent to a circle is perpendicular to the radius",
+        "Prove that the radius is perpendicular to the tangent",
+        "What is the relationship between tangent and radius at point of contact?",
+        "Show that angle between radius and tangent is 90 degrees"
+      ],
+      "response_template": "Theorem 10.1 proof and explanation"
+    },
+    {
+      "intent": "length_of_tangents_theorem",
+      "examples": [
+        "State and prove: lengths of tangents drawn from an external point are equal",
+        "How to prove two tangents from external point are equal?",
+        "Theorem on equal tangents from outside the circle",
+        "Why are two tangents drawn from a point equal in length?"
+      ],
+      "response_template": "Theorem 10.2 proof and explanation"
+    },
+    {
+      "intent": "application_tangent_theorems",
+      "examples": [
+        "Apply tangent theorem to solve geometry problem",
+        "Use circle theorem to find unknown side",
+        "How to solve question using tangent-radius property?",
+        "Use equal tangent property in triangle problem"
+      ],
+      "response_template": "Application of tangent theorems"
+    },
+    {
+      "intent": "construct_tangents_to_circle",
+      "examples": [
+        "How to construct a tangent to a circle from a point outside?",
+        "Draw two tangents from an external point",
+        "Construction of tangents to a circle",
+        "Steps of construction to draw tangents"
+      ],
+      "response_template": "Construction steps for tangents"
+    },
+    {
+      "intent": "real_life_application_circles",
+      "examples": [
+        "Where are circles and tangents used in real life?",
+        "Application of circle geometry in engineering",
+        "How are tangents used in design?",
+        "Use of circle properties in daily life"
+      ],
+      "response_template": "Real-world applications of circles"
+    },
+    {
+      "intent": "relation_between_chord_and_tangent",
+      "examples": [
+        "Is tangent perpendicular to chord?",
+        "Relationship between chord and tangent?",
+        "Does tangent bisect the chord?",
+        "Chord tangent angle properties"
+      ],
+      "response_template": "Chord-tangent relationships"
+    },
+    {
+      "intent": "verify_tangent_properties",
+      "examples": [
+        "Verify tangent is perpendicular to radius",
+        "Prove length of tangents from point P are equal",
+        "Confirm theorem using given circle diagram",
+        "How to check if two lines are tangents?"
+      ],
+      "response_template": "Verification of tangent properties"
+    }
+  ]
+}
