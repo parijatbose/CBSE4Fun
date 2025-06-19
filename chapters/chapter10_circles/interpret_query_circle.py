@@ -1,10 +1,12 @@
 import re
 from typing import Dict, Any, Tuple, Optional
+from sub_chapters.utils.sanitizer import sanitize_expression
 
 def interpret_query(query: str) -> Dict[str, Any]:
     """
     Interpret the circle-related query and extract relevant parameters.
     """
+    query = sanitize_expression(query)
     query = query.lower().strip()
     
     # Initialize result dictionary
@@ -57,29 +59,39 @@ def interpret_query(query: str) -> Dict[str, Any]:
     return result
 
 def extract_tangent_length_params(query: str) -> Optional[Dict[str, float]]:
-    """Extract point coordinates and radius from tangent length query."""
+    """Extract point coordinates, radius, and optional center from tangent length query."""
     try:
-        # Look for coordinates in format (x,y)
-        coord_match = re.search(r'\((\d+\.?\d*),\s*(\d+\.?\d*)\)', query)
-        if not coord_match:
+        import re
+
+        # Extract point
+        point_match = re.search(r'from point\s*\(([\d.-]+),\s*([\d.-]+)\)', query)
+        if not point_match:
             return None
-        
-        x = float(coord_match.group(1))
-        y = float(coord_match.group(2))
-        
-        # Look for radius
-        radius_match = re.search(r'radius\s+(\d+\.?\d*)', query)
+        x = float(point_match.group(1))
+        y = float(point_match.group(2))
+
+        # Extract radius
+        radius_match = re.search(r'radius\s+([\d.]+)', query)
         if not radius_match:
             return None
-        
         r = float(radius_match.group(1))
-        
+
+        # Extract center (optional)
+        center_match = re.search(r'center\s*\(([\d.-]+),\s*([\d.-]+)\)', query)
+        if center_match:
+            h = float(center_match.group(1))
+            k = float(center_match.group(2))
+        else:
+            h, k = 0.0, 0.0  # Default to origin if not given
+
         return {
             'x': x,
             'y': y,
-            'radius': r
+            'radius': r,
+            'h': h,
+            'k': k
         }
-    
+
     except Exception:
         return None
 
