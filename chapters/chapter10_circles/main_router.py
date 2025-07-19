@@ -54,10 +54,31 @@ def route_query(query: str) -> str:
             return route_by_type(result['type'], result['parameters'], query)
     
     # Fall back to keyword-based routing
-    # Tangent length problems
-    if any(keyword in query_lower for keyword in ['tangent length', 'length of tangent']):
-        return solve_tangent_length(query)
+
+    if any(k in query_lower for k in ['angle', '∠', 'poq', 'inclined to each other']):
+        return solve_angle_between_tangents(query)
+
     
+    # Tangent length problems
+    elif 'tangent' in query_lower and any(k in query_lower for k in ['length', 'radius', 'distance', 'centre', 'center']):
+        return solve_tangent_geometry_fallback(query)
+    
+    
+
+    # Tangent + distance to center + radius => solve radius
+    elif (
+        'radius' in query_lower and
+        'tangent' in query_lower and
+        ('distance from' in query_lower or 'from the centre' in query_lower)
+    ):
+        return solve_radius_from_tangent(query)
+    
+    
+    # Triangle-based tangent problems like "OQ = 12 cm", "radius 5", "length PQ"
+    elif all(k in query_lower for k in ['tangent', 'point', 'meets', 'line through']):
+        return solve_tangent_geometry_fallback(query)
+
+
     # Tangent theorem proofs
     elif any(keyword in query_lower for keyword in ['prove', 'theorem', 'proof']):
         return solve_theorem_proof(query)
@@ -96,6 +117,14 @@ def route_by_type(problem_type: str, parameters: Dict[str, Any], original_query:
     """Route based on problem type from interpret_query."""
     if problem_type == 'tangent_length':
         return solve_tangent_length_with_params(parameters)
+    elif problem_type == 'triangle_tangent_length':
+        try:
+            from sub_chapters.tangent_properties.solve_tangent_length_in_triangle import solve_tangent_length_in_triangle
+            return solve_tangent_length_in_triangle(parameters)
+        except:
+            return "❌ Could not solve triangle-based tangent problem."
+
+
     elif problem_type == 'theorem_proof':
         return solve_theorem_proof_with_params(parameters)
     elif problem_type == 'construction':
@@ -192,6 +221,200 @@ def solve_tangent_length_with_params(params: Dict[str, Any]) -> str:
 
 ✅ **Answer:** The length of the tangent is **{tangent_length:.2f} units**.
 """
+
+def solve_tangent_length_in_triangle(params: Dict[str, float]) -> str:
+    r = params.get('radius')
+    oq = params.get('oq')
+    
+    if r is None or oq is None:
+        return "❌ Missing radius or OQ value"
+
+    if oq <= r:
+        return "❌ OQ must be longer than radius to form a right triangle"
+
+    pq = (oq**2 - r**2)**0.5
+
+    return f"""
+📐 **Tangent Length Using Right Triangle**
+
+**Given:**
+- Radius (OP) = {r} cm
+- OQ = {oq} cm
+
+**Using Pythagoras theorem in △OPQ:**
+
+\[
+PQ = \sqrt{{OQ^2 - OP^2}} = \sqrt{{{oq}^2 - {r}^2}} = \sqrt{{{oq**2} - {r**2}}} = \sqrt{{{oq**2 - r**2}}} = {pq:.2f} \text{{ cm}}
+\]
+
+✅ **Answer:** Length of PQ = **{pq:.2f} cm**
+"""
+
+import re
+
+def extract_tagged_numbers(query: str):
+    query = query.lower()
+    data = {}
+
+    # Patterns to catch number preceding or following the keywords
+    patterns = [
+        (r'(?:radius|op)[^\d]{0,5}(\d+\.?\d*)', 'radius'),
+        (r'(?:tangent|pq)[^\d]{0,5}(\d+\.?\d*)', 'tangent'),
+        (r'(?:oq|distance|center|centre)[^\d]{0,5}(\d+\.?\d*)', 'distance'),
+    ]
+
+    for pattern, label in patterns:
+        match = re.search(pattern, query)
+        if match:
+            data[label] = float(match.group(1))
+
+    return data
+
+
+def solve_tangent_geometry_fallback(query: str) -> str:
+    import re
+    import math
+
+    query = query.lower()
+    numbers = [float(n) for n in re.findall(r'\d+\.?\d*', query)]
+    if len(numbers) < 2:
+        return "❌ Not enough numerical data."
+
+    # Initialize variables
+    r = t = d = None
+
+    # Check for specific mentions
+    if 'tangent' in query or 'pq' in query:
+        tangent_match = re.search(r'tangent.*?(\d+\.?\d*)', query)
+        if tangent_match:
+            t = float(tangent_match.group(1))
+        else:
+            t = numbers[0]  # fallback
+
+    if 'distance' in query or 'from the centre' in query or 'oq' in query:
+        distance_match = re.search(r'distance.*?(\d+\.?\d*)', query)
+        if not distance_match:
+            distance_match = re.search(r'from.*?centre.*?(\d+\.?\d*)', query)
+        if distance_match:
+            d = float(distance_match.group(1))
+        else:
+            d = numbers[1] if len(numbers) > 1 else None
+
+    if r is None and t is not None and d is not None:
+        if d <= t:
+            return "❌ Invalid geometry: distance must be greater than tangent."
+        r = math.sqrt(d**2 - t**2)
+        return f"""
+📊 **Solution**
+📐 **Finding Radius from Tangent and Center Distance**
+
+Given:
+- Tangent Length (PQ) = {t} cm
+- Distance from center (OQ) = {d} cm
+
+By Pythagoras:
+\\[
+r = \\sqrt{{OQ^2 - PQ^2}} = \\sqrt{{{d}^2 - {t}^2}} = {r:.2f} \\text{{ cm}}
+\\]
+
+✅ **Answer:** Radius = **{r:.2f} cm**
+"""
+    return "❌ Could not confidently identify radius, tangent, and distance. Please include keywords explicitly."
+
+
+def solve_radius_from_tangent(query: str) -> str:
+    import re
+    import math
+
+    # Extract numbers
+    numbers = re.findall(r'\d+\.?\d*', query)
+    if len(numbers) < 2:
+        return "❌ Could not extract both tangent length and center distance."
+
+    pq = float(numbers[0])  # tangent length
+    oq = float(numbers[1])  # distance from center
+
+    if oq <= pq:
+        return "❌ Invalid geometry. OQ must be greater than tangent length."
+
+    # Pythagoras: OQ² = OP² + PQ² → OP = sqrt(OQ² - PQ²)
+    try:
+        radius = math.sqrt(oq**2 - pq**2)
+        return f"""
+📊 **Solution**
+📐 **Finding Radius from Tangent and Center Distance**
+
+**Given:**
+- Tangent Length (PQ) = {pq} cm  
+- Distance from center (OQ) = {oq} cm  
+
+**Using Pythagoras Theorem in △OPQ:**
+
+\\[
+OP = \\sqrt{{OQ^2 - PQ^2}} = \\sqrt{{{oq}^2 - {pq}^2}} = \\sqrt{{{oq**2 - pq**2}}} = {radius:.2f} \\text{{ cm}}
+\\]
+
+✅ **Answer:** Radius = **{radius:.2f} cm**
+"""
+    except Exception as e:
+        return f"❌ Error in calculation: {e}"
+
+
+
+def solve_angle_between_tangents(query: str) -> str:
+    import re
+
+    query = query.replace('\uf0d0', '∠')  # Replace icon with real angle symbol
+    query = query.replace('\n', ' ')      # Flatten line breaks
+    query = query.strip()
+
+    #print("DEBUG - input query:", repr(query))
+
+    # Try to capture angle POQ
+    poq_match = re.search(r'∠?\s?POQ\s?=?\s?(\d+\.?\d*)', query, re.IGNORECASE)
+    if poq_match:
+        angle_poq = float(poq_match.group(1))
+        angle_ptq = 180 - angle_poq
+        return f"""
+📐 **Angle Between Tangents (POQ to PTQ)**
+
+Given:
+- ∠POQ = {angle_poq}°
+
+We know:
+∠PTQ = 180° - ∠POQ
+= 180° - {angle_poq}° = **{angle_ptq}°**
+
+✅ **Answer:** ∠PTQ = **{angle_ptq}°**
+"""
+
+    # Try to capture angle APB by phrase or symbol
+    apb_match = re.search(
+    r'(?:∠\s?APB\s?=?\s?|inclined to each other at\s*(?:an\s*)?(?:angle\s*of\s*)?)(\d+\.?\d*)',
+    query,
+    re.IGNORECASE
+    )
+
+    if apb_match:
+        angle_apb = float(apb_match.group(1))
+        angle_poa = 90 - (angle_apb / 2)
+        return f"""
+📐 **Angle Between Tangents (APB to POA)**
+
+Given:
+- ∠APB = {angle_apb}°
+
+We know:
+∠POA = 90° - (½ × ∠APB)
+= 90° - (½ × {angle_apb}°) = **{angle_poa}°**
+
+✅ **Answer:** ∠POA = **{angle_poa}°**
+"""
+
+
+    return "❌ Could not find ∠POQ or ∠APB in the question."
+
+
 
 def solve_theorem_proof(query: str) -> str:
     """Solve theorem proof problems."""

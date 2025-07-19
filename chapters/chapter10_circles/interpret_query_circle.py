@@ -49,6 +49,16 @@ def interpret_query(query: str) -> Dict[str, Any]:
                 result['parameters'] = params
             else:
                 result['error'] = "Could not extract radius and angle from query"
+
+        elif any(keyword in query for keyword in ['meets a line through the centre', 'line through center', 'point Q', 'point P']):
+            result['type'] = 'triangle_tangent_length'
+            params = extract_triangle_based_tangent_params(query)
+            if params:
+                result['parameters'] = params
+            else:
+                result['error'] = "Could not extract radius and OQ from query"
+
+
         
         else:
             result['error'] = "Could not determine the type of circle problem"
@@ -94,6 +104,15 @@ def extract_tangent_length_params(query: str) -> Optional[Dict[str, float]]:
 
     except Exception:
         return None
+def extract_triangle_based_tangent_params(query: str) -> dict:
+    import re
+    numbers = re.findall(r'\d+\.?\d*', query)
+    if len(numbers) >= 2:
+        r = float(numbers[0])
+        oq = float(numbers[1])
+        return {'radius': r, 'oq': oq}
+    return {}
+
 
 def extract_real_world_params(query: str) -> Optional[Dict[str, float]]:
     """Extract radius and angle from real world application query."""
